@@ -27,6 +27,10 @@ export const Navbar = () => {
           <NavLink className={isActive} to="/dc">
             DC
           </NavLink>
+
+          <NavLink className={isActive} to="/search">
+            Search
+          </NavLink>
         </div>
       </div>
 
