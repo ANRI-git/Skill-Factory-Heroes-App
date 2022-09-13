@@ -12,18 +12,20 @@ export const HeroByPublisherPage = () => {
 
   return (
     <>
-      {publishers === null ? (
-        <div>Loading categories...</div>
-      ) : (
-        <>
-          <select name="publisher" value={publisher} onChange={onInputChange}>
-            <option key={"All"}>All</option>
-            {publishers.map((publisher) => (
-              <option key={publisher}>{publisher}</option>
-            ))}
-          </select>
-        </>
-      )}
+      <div className="container d-flex m-4 justify-content-center">
+        {publishers === null ? (
+          <div>Loading categories...</div>
+        ) : (
+          <>
+            <select name="publisher" value={publisher} onChange={onInputChange}>
+              <option key={"All"}>All</option>
+              {publishers.map((publisher) => (
+                <option key={publisher}>{publisher}</option>
+              ))}
+            </select>
+          </>
+        )}
+      </div>
       <HeroList publisher={publisher} handlePublisher={handlePublisher} />
     </>
   );

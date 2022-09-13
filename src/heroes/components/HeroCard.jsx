@@ -15,11 +15,11 @@ export const HeroCard = ({
     <div className="col">
       <div className="card">
         <div className="row no-glutters">
-          <div className="col-4">
+          <div className="col-6">
             <img src={heroImageUrl} alt={name} className="card-img animate__animated animate__flipInY" />
           </div>
-          <div className="col-8">
-            <div className="card-body animate__animated animate__fadeIn">
+          <div className="col-6">
+            <div className="card-body animate__animated animate__fadeIn ps-0">
               <h5 className="card-title">{name}</h5>
               <div className="card-text">{alter_ego}</div>
               {
