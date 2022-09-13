@@ -1,18 +1,20 @@
-import React, { useMemo } from "react";
+import React, { useContext, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
 import { HeroCard } from "../components/HeroCard";
-import { getHeroesByName } from "../helpers/getHeroesByName";
-import { userForm } from "../../hooks/userForm";
+import { useForm } from "../../hooks/useForm";
+import { HeroesContext } from "../context/HeroesContext";
 
 export const SearchPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { q = "" } = queryString.parse(location.search);
 
-  const heroes = useMemo(() => getHeroesByName(q), [q]);
+  const { handleSearch } = useContext(HeroesContext);
 
-  const { searchText, onInputChange } = userForm({
+  const heroes = useMemo(() => handleSearch(q), [q]);
+
+  const { searchText, onInputChange } = useForm({
     searchText: q,
   });
 

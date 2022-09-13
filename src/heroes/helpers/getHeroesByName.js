@@ -1,9 +1,8 @@
-import { heroes } from "../data/heroesData";
+export const getHeroesByName = (name = "", heroes) => {
+  console.log(name);
+  if (name.trim().length === 0) return [];
 
-export const getHeroesByName = (name = '') => {
-  name = name.toLowerCase().trim();
+  name = name.toLowerCase();
 
-  if (name.length === 0) return [];
-
-  return heroes.filter((hero) => hero.superhero.toLowerCase().includes(name));
+  return heroes.filter((hero) => hero.name.toLowerCase().includes(name));
 };

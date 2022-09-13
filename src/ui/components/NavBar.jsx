@@ -25,14 +25,6 @@ export const Navbar = () => {
 
       <div className="navbar-collapse">
         <div className="navbar-nav">
-          <NavLink className={isActive} to="/marvel">
-            Marvel
-          </NavLink>
-
-          <NavLink className={isActive} to="/dc">
-            DC
-          </NavLink>
-
           <NavLink className={isActive} to="/search">
             Search
           </NavLink>
