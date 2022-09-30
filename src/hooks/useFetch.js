@@ -1,4 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+
+const validPublishers = [
+  'ABC Studios',
+  'DC Comics',
+  'Dark Horse Comics',
+  'George Lucas',
+  'IDW Publishing',
+  'Icon Comics',
+  'Image Comics',
+  'J. K. Rowling',
+  'J. R. R. Tolkien',
+  'Marvel Comics',
+  'Microsoft',
+  'NBC - Heroes',
+  'Rebellion',
+  'Shueisha',
+  'Sony Pictures',
+  'South Park',
+  'Star Trek',
+  'SyFy',
+  'Titan Books',
+  'Universal Studios',
+];
 
 export const useFetch = (url) => {
   const [state, setState] = useState({
@@ -25,7 +48,7 @@ export const useFetch = (url) => {
       data,
       isLoading: false,
       publishers: Array.from(publishers)
-        .filter((publisher) => publisher !== "" && publisher !== null)
+        .filter((publisher) => publisher !== '' && publisher !== null && validPublishers.includes(publisher))
         .sort(),
     });
   };
